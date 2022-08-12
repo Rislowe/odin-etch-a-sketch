@@ -1,8 +1,12 @@
-let body = document.querySelector('body');
+//Spawn base etchbox element.
+let body = document.getElementsByTagName("BODY")[0];
+let etchBox = document.createElement('div');
+etchBox.classList.add('.etch-box');
+body.appendChild(etchBox);
 
 let createGrid = (number) =>
 {
-    let section = 960/number;
+    let section = 800/number;
     let format = section + "px";
 
     for(let i = 1; i <= number; i++)
@@ -27,7 +31,7 @@ let createGrid = (number) =>
             newDiv.appendChild(subDiv);
         }
 
-        body.appendChild(newDiv);
+        etchBox.appendChild(newDiv);
     }
 
     let rows = document.querySelectorAll('.grid_row');
@@ -47,7 +51,7 @@ let createGrid = (number) =>
 
 let eraseGrid = ()=>
 {
-    let body = document.querySelector('body');
+    let etchBox = document.querySelector('.etch-box');
 
     let rows = document.querySelectorAll('.grid_row');
 
@@ -58,7 +62,7 @@ let eraseGrid = ()=>
                 let child = row.querySelector('.box');
                 row.removeChild(child);
             }
-            body.removeChild(row);
+            etchBox.removeChild(row);
         });
     
 }
@@ -92,4 +96,4 @@ newGridButton.addEventListener("click", ()=>
 
 //Main functionality
 
-createGrid(4);
+createGrid(16);

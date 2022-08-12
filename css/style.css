@@ -14,11 +14,22 @@ body
 
 .box
 {
-    border-style: solid;
-    border-color: black;
+    border-style: none;
 }
 
 .boxTrail
 {
     background-color: coral;
+}
+
+.etch-box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+    width: 800px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
 }
