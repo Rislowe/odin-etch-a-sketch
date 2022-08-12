@@ -1,5 +1,6 @@
 //Gloabl Variables
 const BOX_SIZE = 600;
+const STARTING_SIZE = 16;
 
 //Spawn base layout.
 let body = document.getElementsByTagName("BODY")[0];
@@ -57,6 +58,8 @@ let createGrid = (number) =>
 
 }
 
+
+//eraseGrid() - removes grid boxes to spawn a new one
 let eraseGrid = ()=>
 {
     let etchBox = document.querySelector('.etch-box');
@@ -75,6 +78,8 @@ let eraseGrid = ()=>
     
 }
 
+
+//bind listener to button and then use to spawn a new grid.
 let newGridButton = document.querySelector('#new-grid-button');
 
 newGridButton.addEventListener("click", ()=>
@@ -104,4 +109,4 @@ newGridButton.addEventListener("click", ()=>
 
 //Main functionality
 
-createGrid(16);
+createGrid(STARTING_SIZE);
