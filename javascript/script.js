@@ -1,12 +1,20 @@
-//Spawn base etchbox element.
-let body = document.getElementsByTagName("BODY")[0];
-let etchBox = document.createElement('div');
-etchBox.classList.add('.etch-box');
-body.appendChild(etchBox);
+//Gloabl Variables
+const BOX_SIZE = 600;
 
+//Spawn base layout.
+let body = document.getElementsByTagName("BODY")[0];
+
+let container = document.querySelector('.main-container');
+
+let etchBox = document.createElement('div');
+etchBox.classList.add('etch-box');
+
+container.appendChild(etchBox);
+
+//createGrid() - divides the box into sections
 let createGrid = (number) =>
 {
-    let section = 800/number;
+    let section = BOX_SIZE/number;
     let format = section + "px";
 
     for(let i = 1; i <= number; i++)
